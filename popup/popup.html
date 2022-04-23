@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css" />
+</head>
+
+<body id="popup-content">
+
+  <section id="main-section">
+
+    <div id="header-title">Select the content</div>
+
+    <div class="flex-container">
+      <select>
+        <option>Anime</option>
+        <option>Books</option>
+        <option>Movies</option>
+      </select>
+      <div class="add-one" id="add-one-list">+</div>
+    </div>
+
+    <div class="flex-container">
+      <select>
+        <option>Dragon Ball Z</option>
+        <option>One Piece</option>
+        <option>Naruto</option>
+      </select>
+      <div class="add-one" id="add-one-content">+</div>
+    </div>
+
+    <div style="display: flex; align-items: center; margin: 0 1rem 0 1rem">
+      
+      <img src="../icons/visibility-off.svg">
+
+      <div id="toggle-button-container">
+        <div id="toggle-button"></div>
+      </div>
+
+      <img src="../icons/visibility-on.svg">
+
+    </div>
+
+    <div id="footer">
+      <div class="footer-button" id="history-button">History</div>
+      <div class="footer-button" id="options-button">Options</div>
+    </div>
+
+  </section>
+
+  <section id="options-section">
+
+  </section>
+
+  <section id="history-section">
+
+  </section>
+
+  <section id="list-adding-section">
+    <span id="back-to-main-section">↵ Back</span>
+
+    <div>List name:</div>
+    <input type="text" placeholder="Ex. Books">
+
+
+    <section id="content-adding-section"></section>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+{
+    "manifest_version": 2,
+    "name": "Listing Tool",
+    "author": "BnVent",
+    "version": "1.0.0",
+    "description": "Simple Web browser extension to create lists of serialized-content consumption. Pretends to supply the utility of \"Mark this content as seen\" in several sites that don't have that function.",
+    "homepage_url": "https://github.com/BnVent/",
+    "icons": {
+      "48": "icons/icon-48.svg"
+    },
+
+    "permissions": [
+        "activeTab"
+    ],
+
+    "browser_action": {
+        "default_icon": "icons/icon-48.svg",
+        "default_title": "Listing Tool Extension",
+        "default_popup": "popup/popup.html"
+    },
+  
+    "content_scripts": [
+      {
+        "matches": ["*://*/*"],
+        "js": ["listing-tool.js"]
+      }
+    ]
+  
+  }

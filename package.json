@@ -1,0 +1,15 @@
+{
+  "name": "listing-tool",
+  "version": "1.0.0",
+  "description": "Simple Web browser extension to create lists of serialized-content consumption. Pretends to supply the utility of \"Mark this content as seen\" in several sites that don't have that function.",
+  "main": "listing-tool.js",
+  "scripts": {
+    "start": "web-ext run --verbose",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "BnVent",
+  "license": "ISC",
+  "devDependencies": {
+    "web-ext": "^6.8.0"
+  }
+}
