@@ -8,6 +8,7 @@
 body, html{
     overflow: hidden;
     width: 16rem;
+    height: 20rem;
 
 }
 
@@ -24,9 +25,7 @@ select, input[type=text]{
     border: 1px solid #DBDBDB;
     border-radius: 5px;
     margin: 0.5rem 0 0.5rem 0;
-}
-
-select{
+    box-sizing: border-box;
     width: 100%;
 }
 
@@ -72,7 +71,7 @@ img{
     cursor: pointer;
 }
 
-#footer{
+.footer{
     display: flex;
     justify-content: space-around;
     margin-top: 1rem;
@@ -93,6 +92,90 @@ img{
 
 #back-to-main-section{
     color: rgb(0, 128, 255);
-    padding: 1rem;
+    padding: 0 0.5rem 0.5rem 0.5rem;
     cursor: pointer;
+}
+
+.section-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.section-title{
+    color: gray;
+}
+
+label{
+    display: block;
+    background-color: #FFF;
+    font-size: 0.75rem;
+}
+
+hr{
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    margin: 1rem 0 1rem 0;
+}
+
+.color-select-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1.5rem);
+    grid-template-rows: repeat(2, 1.5rem);
+    justify-content: space-between;
+    row-gap: 1rem;
+    margin: 1rem 1rem 2rem 1rem;
+}
+
+.color-option{
+    border-radius: 50%;
+    padding: 0.25rem;
+    box-sizing: border-box;
+    cursor: pointer;
+    position: relative;
+}
+
+.color-option::before{
+    content: "";
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0.25rem;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#create-list-button{
+    display: block;
+    margin: 0 auto 0 auto;
+    background-color: #FFF;
+    border-radius: 5px;
+    border: 1px solid #dbdbdb;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+}
+
+#create-list-button:hover{
+    background-color: rgb(0, 128, 255);
+    color: #FFF;
+    cursor: pointer;
+}
+
+#list-creation-input{
+    transition: border-color 0.25s, color 0.25s;
+    outline: #DBDBDB;
+}
+
+.input-container{
+    position: relative;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.input-label{
+    position: absolute;
+    top: -0.5rem;
+    left: 0.5rem;
+    width: max-content;
+    transition: color 0.25s;
 }

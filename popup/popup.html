@@ -13,7 +13,7 @@
     <div id="header-title">Select the content</div>
 
     <div class="flex-container">
-      <select>
+      <select id="list-selection">
         <option>Anime</option>
         <option>Books</option>
         <option>Movies</option>
@@ -31,7 +31,7 @@
     </div>
 
     <div style="display: flex; align-items: center; margin: 0 1rem 0 1rem">
-      
+
       <img src="../icons/visibility-off.svg">
 
       <div id="toggle-button-container">
@@ -42,7 +42,7 @@
 
     </div>
 
-    <div id="footer">
+    <div class="footer">
       <div class="footer-button" id="history-button">History</div>
       <div class="footer-button" id="options-button">Options</div>
     </div>
@@ -58,11 +58,31 @@
   </section>
 
   <section id="list-adding-section">
-    <span id="back-to-main-section">↵ Back</span>
 
-    <div>List name:</div>
-    <input type="text" placeholder="Ex. Books">
+    <div class="section-header">
+      <div id="back-to-main-section">↵ Back</div>
+      <div class="section-title">List creation</div>
+    </div>
 
+    <div class="input-container">
+      <label class="input-label" id="list-creation-label">List name</label>
+      <input type="text" placeholder="E.g. Books" id="list-creation-input">
+    </div>
+
+    <hr>
+
+    <label>Color selection:</label>
+    <div class="color-select-container">
+      <div class="color-option" value="#DBDBDB"></div>
+      <div class="color-option" value="#F00078"></div>
+      <div class="color-option" value="#008800"></div>
+      <div class="color-option" value="#3073F0"></div>
+      <div class="color-option" value="#F04922"></div>
+      <div class="color-option" value="#480CF0"></div>
+      <div class="color-option" value="#F000D7"></div>
+    </div>
+
+    <button id="create-list-button">+ Create List</button>
 
     <section id="content-adding-section"></section>
 
