@@ -1,16 +1,20 @@
 const createListButton = document.getElementById('create-list-button');
-const listSelection = document.getElementById('list-selection')
 const colorOptions = Object.values(document.getElementsByClassName('color-option'));
 const defaultOption = colorOptions.splice(0, 1)[0]
 
+import {Sections, listSelection, listCreationInput, showSection} from './main-section.js'
+
+
 document.getElementById('back-to-main-section').onclick = () => {
-    showSection(mainSection)
+    showSection(Sections.mainSection)
 }
 
 createListButton.onclick = () => {
+
     let element = `<option selected>${listCreationInput.value}</option>`
     listSelection.innerHTML += element
-    showSection(mainSection)
+
+    showSection(Sections.mainSection)
 }
 
 createListButton.disabled = true;

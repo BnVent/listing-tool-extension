@@ -1,10 +1,12 @@
 const addListButton = document.getElementById('add-one-list')
 const addContentButton = document.getElementById('add-one-content')
+const listSelection = document.getElementById('list-selection');
 
-// Sections
-const mainSection = document.getElementById('main-section');
-const listAddingSection = document.getElementById('list-adding-section');
-const contentAddingSection = document.getElementById('content-adding-section');
+const Sections = {
+    mainSection: document.getElementById('main-section'),
+    listAddingSection: document.getElementById('list-adding-section'),
+    contentAddingSection: document.getElementById('content-adding-section')
+}
 
 // Toggle button
 const toggleButtonContainer = document.getElementById('toggle-button-container')
@@ -13,7 +15,7 @@ const toggleButton = document.getElementById('toggle-button')
 const listCreationInput = document.getElementById('list-creation-input');
 const listCreationLabel = document.getElementById('list-creation-label')
 
-var currentSection = mainSection
+var currentSection = Sections.mainSection
 
 function showSection(section) {
     currentSection.style.display = 'none'
@@ -22,10 +24,11 @@ function showSection(section) {
 }
 
 addListButton.onclick = () => {
-    showSection(listAddingSection)
+    showSection(Sections.listAddingSection)
 }
 
 addContentButton.onclick = () => showSection(contentAddingSection)
+addContentButton.onclick = () => showSection(Sections.contentAddingSection)
 
 function addOverlay() {
 
@@ -54,3 +57,5 @@ toggleButtonContainer.onclick = () => {
     toggleButtonContainer.isToggled = true
     addOverlay();
 }
+
+export {Sections, listSelection, listCreationInput, showSection}
