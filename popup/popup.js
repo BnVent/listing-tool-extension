@@ -78,3 +78,25 @@ toggleButtonContainer.onclick = () => {
 document.getElementById('back-to-main-section').onclick = () => {
     showSection(mainSection)
 }
+
+const createListButton = document.getElementById('create-list-button');
+const listSelection = document.getElementById('list-selection')
+
+createListButton.onclick = () => {
+    let element = `<option selected>${listCreationInput.value}</option>`
+    listSelection.innerHTML += element
+    showSection(mainSection)
+}
+
+createListButton.disabled = true;
+
+listCreationInput.oninput = (event) => {
+
+    if(event.target.value === ''){
+        createListButton.disabled = true;
+        return 0
+    }
+    
+    createListButton.disabled = false;
+}
+

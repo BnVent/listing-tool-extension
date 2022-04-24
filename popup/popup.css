@@ -161,6 +161,12 @@ hr{
     cursor: pointer;
 }
 
+#create-list-button:disabled{
+    background-color: #FFF;
+    color: gray;
+    cursor: not-allowed;
+}
+
 #list-creation-input{
     transition: border-color 0.25s, color 0.25s;
     outline: #DBDBDB;
