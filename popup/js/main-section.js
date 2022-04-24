@@ -1,6 +1,7 @@
 const addListButton = document.getElementById('add-one-list')
 const addContentButton = document.getElementById('add-one-content')
 const listSelection = document.getElementById('list-selection');
+const contentList = document.getElementById('content-list')
 
 const Sections = {
     mainSection: document.getElementById('main-section'),
@@ -55,11 +56,23 @@ toggleButtonContainer.onclick = () => {
     if (toggleButtonContainer.isToggled) {
         toggleButton.style.transform = 'translateX(0)'
         toggleButtonContainer.isToggled = false
+        listSelection.disabled = false
+        contentList.disabled = false
+        addContentButton.disabled = false
+        addListButton.disabled = false
+        toggleButton.style.backgroundColor = '#DBDBDB'
+        toggleButtonContainer.style.backgroundColor = '#FFF'
         return 0
     }
 
     toggleButton.style.transform = 'translateX(125%)'
     toggleButtonContainer.isToggled = true
+    listSelection.disabled = true
+    contentList.disabled = true
+    addContentButton.disabled = true
+    addListButton.disabled = true
+    toggleButtonContainer.style.backgroundColor = 'rgb(128, 255, 128)'
+    toggleButton.style.backgroundColor = 'rgb(64, 128, 64)'
     addOverlay();
 }
 
