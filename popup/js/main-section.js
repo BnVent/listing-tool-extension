@@ -30,12 +30,37 @@ addListButton.onclick = () => {
 }
 
 var listOptions = [
-    { name: 'Anime', color: null },
-    { name: 'Books', color: null },
-    { name: 'Movies', color: null }
+    {
+        name: 'Anime',
+        color: null,
+        content: [
+            "Dragon Ball Z",
+            "One Piece",
+            "Naruto"
+        ]
+    },
+    {
+        name: 'Books',
+        color: null,
+        content: [
+            "The Lord of the Rings",
+            "The Hobbit",
+            "Harry Potter",
+        ]
+    },
+    {
+        name: 'Movies',
+        color: null,
+        content: [null]
+    }
 ]
 
 refreshCategoryList();
+refreshContentList();
+
+function getCurrentCategoryIndex() {
+    return listOptions.findIndex(element => element.name == categoryList.value)
+}
 
 addContentButton.onclick = () => showSection(Sections.contentAddingSection)
 
@@ -79,7 +104,10 @@ toggleButtonContainer.onclick = () => {
     addOverlay();
 }
 
-categoryList.onchange = () => { colorVerification() }
+categoryList.onchange = () => {
+    colorVerification();
+    refreshContentList();
+}
 
 function refreshCategoryList() {
 
@@ -92,21 +120,27 @@ function refreshCategoryList() {
     childrensList[childrensList.length - 1].setAttribute('selected', true);
 }
 
-function colorVerification() {
+function refreshContentList() {
 
-    listOptions.forEach(element => {
-        if (element.name === categoryList.value) {
-            // Assigned color | default color
-            categoryList.style.color = element.color ?? '#000'
-            categoryList.style.borderColor = element.color ?? '#DBDBDB'
-            categoryListLabel.style.color = element.color ?? '#6C6C6C'
-            return 0
-        }
-    });
+    let index = getCurrentCategoryIndex()
+
+    contentList.innerHTML = listOptions[index].content[0] === null
+        ? '<option selected disabled>(No added content)</option>'
+        : listOptions[index].content.map(element => {
+            return `<option>${element}</option>`
+        })
 }
 
-function addNewOption(name, color) {
-    listOptions.push({ name: name, color: color })
+function colorVerification() {
+    let index = getCurrentCategoryIndex()
+    // Assigned color | default color
+    categoryList.style.color = listOptions[index].color ?? '#000'
+    categoryList.style.borderColor = listOptions[index].color ?? '#DBDBDB'
+    categoryListLabel.style.color = listOptions[index].color ?? '#6C6C6C'
+}
+
+function addNewOption(name, color, content = [null]) {
+    listOptions.push({ name: name, color: color, content: content })
     refreshCategoryList();
     colorVerification();
 }
