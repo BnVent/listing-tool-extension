@@ -1,9 +1,10 @@
 const createListButton = document.getElementById('create-list-button');
 const colorOptions = Object.values(document.getElementsByClassName('color-option'));
 const defaultOption = colorOptions.splice(0, 1)[0]
+const listCreationInput = document.getElementById('list-creation-input');
+const listCreationLabel = document.getElementById('list-creation-label');
 
-import {Sections, listSelection, listCreationInput, showSection} from './main-section.js'
-
+import {Sections, listSelection, showSection} from './main-section.js'
 
 document.getElementById('back-to-main-section').onclick = () => {
     showSection(Sections.mainSection)

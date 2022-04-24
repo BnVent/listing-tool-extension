@@ -12,9 +12,6 @@ const Sections = {
 const toggleButtonContainer = document.getElementById('toggle-button-container')
 const toggleButton = document.getElementById('toggle-button')
 
-const listCreationInput = document.getElementById('list-creation-input');
-const listCreationLabel = document.getElementById('list-creation-label')
-
 var currentSection = Sections.mainSection
 
 function showSection(section) {
@@ -67,4 +64,4 @@ toggleButtonContainer.onclick = () => {
     addOverlay();
 }
 
-export {Sections, listSelection, listCreationInput, showSection}
+export {Sections, listSelection, showSection}
