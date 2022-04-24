@@ -27,7 +27,16 @@ addListButton.onclick = () => {
     showSection(Sections.listAddingSection)
 }
 
-addContentButton.onclick = () => showSection(contentAddingSection)
+var listOptions = [
+    { name: 'Anime', color: null },
+    { name: 'Books', color: null },
+    { name: 'Movies', color: null }
+]
+
+listSelection.innerHTML = listOptions.map(element => {
+    return `<option>${element.name}</option>`
+})
+
 addContentButton.onclick = () => showSection(Sections.contentAddingSection)
 
 function addOverlay() {
