@@ -15,7 +15,7 @@
     <div class="input-container">
       <label class="input-label" style="top: 0rem">Category</label>
       <div class="flex-container">
-        <select id="list-selection">
+        <select id="category-list">
         </select>
         <button class="add-one" id="add-one-list">+</button>
       </div>
@@ -64,15 +64,15 @@
 
     <div class="section-header">
       <div id="back-to-main-section">↵ Back</div>
-      <div class="section-title">List creation</div>
+      <div class="section-title">Category creation</div>
     </div>
 
     <div class="input-container">
-      <label class="input-label" id="list-creation-label">List name</label>
-      <input type="text" placeholder="E.g. Books" id="list-creation-input">
+      <label class="input-label" id="list-creation-label">Category name</label>
+      <input type="text" placeholder="E.g. Books" id="list-creation-input" maxlength="22">
     </div>
 
-    <hr>
+    <hr style="border: 1px solid rgba(0, 0, 0, 0.05)">
 
     <label>Color selection:</label>
     <div class="color-select-container">
@@ -85,7 +85,10 @@
       <div class="color-option" value="#F000D7"></div>
     </div>
 
-    <button id="create-list-button">+ Create List</button>
+    <div style="position: relative;">
+      <hr style="position: absolute; width: 100%; bottom: 0rem; z-index: -1;">
+      <button id="create-list-button">+ Create category</button>
+    </div>
 
     <section id="content-adding-section"></section>
 

@@ -18,7 +18,7 @@ body, html{
     opacity: 0.75;
 }
 
-#list-selection, #content-list{
+#category-list, #content-list{
     transition: color 0.25s, border-color 0.25s;
 }
 
@@ -125,7 +125,7 @@ label{
 }
 
 hr{
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     margin: 1rem 0 1rem 0;
 }
 

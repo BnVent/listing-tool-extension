@@ -4,7 +4,8 @@ const defaultOption = colorOptions.splice(0, 1)[0]
 const listCreationInput = document.getElementById('list-creation-input');
 const listCreationLabel = document.getElementById('list-creation-label');
 
-import { Sections, listSelection, showSection, addNewOption } from './main-section.js'
+import { Sections, showSection, addNewOption } from './main-section.js'
+
 
 document.getElementById('back-to-main-section').onclick = () => {
     showSection(Sections.mainSection)

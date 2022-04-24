@@ -1,6 +1,7 @@
 const addListButton = document.getElementById('add-one-list')
 const addContentButton = document.getElementById('add-one-content')
-const listSelection = document.getElementById('list-selection');
+
+const categoryList = document.getElementById('category-list'); // Change name to category list
 const contentList = document.getElementById('content-list')
 
 const Sections = {
@@ -32,7 +33,7 @@ var listOptions = [
     { name: 'Movies', color: null }
 ]
 
-refreshSelectionList();
+refreshCategoryList();
 
 addContentButton.onclick = () => showSection(Sections.contentAddingSection)
 
@@ -56,7 +57,7 @@ toggleButtonContainer.onclick = () => {
     if (toggleButtonContainer.isToggled) {
         toggleButton.style.transform = 'translateX(0)'
         toggleButtonContainer.isToggled = false
-        listSelection.disabled = false
+        categoryList.disabled = false
         contentList.disabled = false
         addContentButton.disabled = false
         addListButton.disabled = false
@@ -67,7 +68,7 @@ toggleButtonContainer.onclick = () => {
 
     toggleButton.style.transform = 'translateX(125%)'
     toggleButtonContainer.isToggled = true
-    listSelection.disabled = true
+    categoryList.disabled = true
     contentList.disabled = true
     addContentButton.disabled = true
     addListButton.disabled = true
@@ -76,25 +77,26 @@ toggleButtonContainer.onclick = () => {
     addOverlay();
 }
 
-listSelection.onchange = () => {colorVerification()}
+categoryList.onchange = () => { colorVerification() }
 
-function refreshSelectionList(){
+function refreshCategoryList() {
 
-    listSelection.innerHTML = listOptions.map((element, index, array) => {
+    categoryList.innerHTML = listOptions.map((element, index, array) => {
         return `<option>${element.name}</option>`
     })
 
-    let childrensList = listSelection.children
+    // The last added element will be selected.
+    let childrensList = categoryList.children
     childrensList[childrensList.length - 1].setAttribute('selected', true);
 }
 
-function colorVerification(){
+function colorVerification() {
 
     listOptions.forEach(element => {
-        if (element.name === listSelection.value) {
+        if (element.name === categoryList.value) {
             // Assigned color | default color
-            listSelection.style.color = element.color ?? '#000'
-            listSelection.style.borderColor = element.color ?? '#DBDBDB'
+            categoryList.style.color = element.color ?? '#000'
+            categoryList.style.borderColor = element.color ?? '#DBDBDB'
             return 0
         }
     });
@@ -102,8 +104,8 @@ function colorVerification(){
 
 function addNewOption(name, color) {
     listOptions.push({ name: name, color: color })
-    refreshSelectionList();
+    refreshCategoryList();
     colorVerification();
 }
 
-export { Sections, listSelection, showSection, addNewOption }
+export { Sections, showSection, addNewOption }
