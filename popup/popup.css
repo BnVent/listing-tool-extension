@@ -18,6 +18,10 @@ body, html{
     opacity: 0.75;
 }
 
+#list-selection{
+    transition: color 0.25s, border-color 0.25s;
+}
+
 select, input[type=text]{
     display: block;
     padding: 0.5rem;

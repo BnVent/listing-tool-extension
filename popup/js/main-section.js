@@ -14,6 +14,7 @@ const toggleButton = document.getElementById('toggle-button')
 
 var currentSection = Sections.mainSection
 
+
 function showSection(section) {
     currentSection.style.display = 'none'
     section.style.display = 'block'
@@ -30,9 +31,7 @@ var listOptions = [
     { name: 'Movies', color: null }
 ]
 
-listSelection.innerHTML = listOptions.map(element => {
-    return `<option>${element.name}</option>`
-})
+refreshSelectionList();
 
 addContentButton.onclick = () => showSection(Sections.contentAddingSection)
 
@@ -64,4 +63,34 @@ toggleButtonContainer.onclick = () => {
     addOverlay();
 }
 
-export {Sections, listSelection, showSection}
+listSelection.onchange = () => {colorVerification()}
+
+function refreshSelectionList(){
+
+    listSelection.innerHTML = listOptions.map((element, index, array) => {
+        return `<option>${element.name}</option>`
+    })
+
+    let childrensList = listSelection.children
+    childrensList[childrensList.length - 1].setAttribute('selected', true);
+}
+
+function colorVerification(){
+
+    listOptions.forEach(element => {
+        if (element.name === listSelection.value) {
+            // Assigned color | default color
+            listSelection.style.color = element.color ?? '#000'
+            listSelection.style.borderColor = element.color ?? '#DBDBDB'
+            return 0
+        }
+    });
+}
+
+function addNewOption(name, color) {
+    listOptions.push({ name: name, color: color })
+    refreshSelectionList();
+    colorVerification();
+}
+
+export { Sections, listSelection, showSection, addNewOption }
