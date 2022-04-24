@@ -40,7 +40,7 @@ const setCurrentColor = (borderColor, textColor = borderColor, labelColor = bord
 }
 
 defaultOption.setAttribute('style', `background: linear-gradient(#DBDBDB, #FFF)`);
-defaultOption.onclick = () => { setCurrentColor('#DBDBDB', '#000', 'black') }
+defaultOption.onclick = () => { setCurrentColor('#DBDBDB', '#000', '#6C6C6C') }
 
 colorOptions.forEach(element => {
 

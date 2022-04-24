@@ -4,6 +4,8 @@ const addContentButton = document.getElementById('add-one-content')
 const categoryList = document.getElementById('category-list'); // Change name to category list
 const contentList = document.getElementById('content-list')
 
+const categoryListLabel = document.getElementsByClassName('input-label')[0]
+
 const Sections = {
     mainSection: document.getElementById('main-section'),
     listAddingSection: document.getElementById('list-adding-section'),
@@ -97,6 +99,7 @@ function colorVerification() {
             // Assigned color | default color
             categoryList.style.color = element.color ?? '#000'
             categoryList.style.borderColor = element.color ?? '#DBDBDB'
+            categoryListLabel.style.color = element.color ?? '#6C6C6C'
             return 0
         }
     });
